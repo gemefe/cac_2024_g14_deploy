@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v3rp*hi+oc@!uh83**0p%o44(8qc0hiba&%5cjh@ibftv0$pkk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -90,16 +90,27 @@ WSGI_APPLICATION = 'farma_backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    "default" :{
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "cac_20150_g14_farma_db",
-        "USER": "root",
-        "PASSWORD": "g14_farma",
-        "HOST": "mysql_host",
-        "PORT": "3306",
+# DATABASES = {
+#     "default" :{
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "cac_20150_g14_farma_db",
+#         "USER": "root",
+#         "PASSWORD": "g14_farma",
+#         "HOST": "mysql_host",
+#         "PORT": "3306",
+#     }
+# }
+
+    DATABASES = {
+    'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'gemefe$cac_24150_g14_farma_db',
+                'USER': 'gemefe',
+                'PASSWORD': 'g14_farma',
+                'HOST': 'gemefe.mysql.pythonanywhere-services.com',
+                'PORT': '3306',
+            }
     }
-}
 
 
 # Password validation
@@ -137,6 +148,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -156,7 +168,7 @@ REST_FRAMEWORK = {
 
 
 # Security settings
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['gemefe.pythonanywhere.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000',
